@@ -32,6 +32,7 @@ elif [ "${COMMAND}" == stop ] ; then
   if [ -n "$(cat ${PIDFILE})" ] ; then
     kill -9 $(cat ${PIDFILE})
     cp /dev/null ${PIDFILE}
+    echo "Stopped ${PIDFILE} process"
   else
     echo ${PIDFILE} empty - flask not running?
   fi
